@@ -5,9 +5,10 @@ app = Flask(__name__)
 
 
 @app.route('/')
+@app.route('/index')
 def hello_world():
     user = {'nickname': 'Miguel'}
-    posts = [  # список выдуманных постов
+    posts = [
         {
             'author': {'nickname': 'John'},
             'body': 'Beautiful day in Portland!'
