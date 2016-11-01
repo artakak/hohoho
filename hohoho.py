@@ -1,0 +1,24 @@
+#!-*-coding:utf-8-*-
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+
+@app.route('/')
+def hello_world():
+    user = {'nickname': 'Miguel'}
+    posts = [  # список выдуманных постов
+        {
+            'author': {'nickname': 'John'},
+            'body': 'Beautiful day in Portland!'
+        },
+        {
+            'author': {'nickname': 'Susan'},
+            'body': 'The Avengers movie was so cool!'
+        }
+    ]
+    return render_template("index.html", title='Home', user=user, posts=posts)
+
+
+if __name__ == '__main__':
+    app.run()
